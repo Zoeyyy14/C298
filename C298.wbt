@@ -1,0 +1,119 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/bmw/BmwX5.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/CurvedRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/RoadLine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.21692281469600366 0.12431784644366214 0.9682404481945448 2.128417207708775
+  position -30.839218504197518 -129.95794386380874 62.03061561157748
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry DEF GROUND Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  boundingObject USE GROUND
+  locked TRUE
+}
+CurvedRoadSegment {
+  translation -64.5 4.5 0.02
+  rotation 0 0 1 1.57
+  width 21.5
+  numberOfLanes 4
+  numberOfForwardLanes 2
+  lines [
+    RoadLine {
+    }
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  rightBarrier TRUE
+  leftBarrier TRUE
+  curvatureRadius 40.5
+}
+StraightRoadSegment {
+  translation -105 4.5 0.02
+  rotation 0 0 1 -1.57
+  name "road 1"
+  width 21.5
+  numberOfLanes 4
+  numberOfForwardLanes 2
+  lines [
+    RoadLine {
+    }
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 69
+}
+BmwX5 {
+  hidden position_0_0 -0.0009579384302108487
+  hidden position2_0_0 1930.3425681665278
+  hidden position_0_1 -0.0007496054118897572
+  hidden position2_0_1 1931.1888455704911
+  hidden position_0_2 77.96189485389344
+  hidden position_0_3 75.28206845575886
+  hidden linearVelocity_0 -0.0025488623577502876 0.0024257438940851316 -0.0020508443576558494
+  hidden angularVelocity_0 0.003283501518810007 0.0018287874781581569 -0.005705244820492103
+  hidden rotation_1 -0.0004789691200825017 0.9999997251390516 -0.0005659597189754198 4.8785061737075
+  hidden linearVelocity_1 -0.0010026683470249374 0.013429519526079911 0.0017357825774470103
+  hidden angularVelocity_1 -5.745383927591289 -8.121251773162655 -0.7156284174409077
+  hidden rotation_2 0.0003748026911724654 -0.9999999137604736 -0.00017889099460954898 4.032228973772665
+  hidden linearVelocity_2 0.006729646374042525 0.007796225755183827 0.0035828501660193986
+  hidden angularVelocity_2 -5.750142943944988 -8.12461646088566 -0.7138873830029044
+  hidden rotation_3 0 -1 0 2.5636711677384025
+  hidden linearVelocity_3 -0.010674862894662381 -2.1525166011539254e-05 -0.0056553026293451325
+  hidden angularVelocity_3 -0.011711772608692876 -0.019613617294513448 -0.007540662147782928
+  hidden rotation_4 0 -0.9999999999999999 0 0.11615523039617749
+  hidden linearVelocity_4 -0.0028854346323840827 -0.0056127173027508736 -0.0039485540631196275
+  hidden angularVelocity_4 0.003094918128811908 0.0012292017872808825 -0.005722533939341391
+  translation -94.99943272136677 44.9031597660695 -0.12668470607113103
+  rotation 0.014757347064495947 -0.04337552334448638 0.9989498409240626 2.527145345262753
+  controller "sdc1"
+  sensorsSlotTop [
+    Camera {
+      translation 0.72 0 -0.05
+      children [
+        DEF camera Shape {
+          appearance PBRAppearance {
+            baseColor 0.8 0.8 0.8
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.1
+          }
+        }
+      ]
+      width 128
+    }
+  ]
+}
